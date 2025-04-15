@@ -19,11 +19,8 @@ public class Ejr1 {
         do {
             opc = metodos.menu();
             switch (opc) {
-                case 1 ->
-                    metodos.escribirArchivo();
-                //case 2 ->
-                 //   metodos.leerArchivo();
-
+                case 1 -> metodos.escribirArchivo();
+                case 2 -> metodos.leerArchivo();
             }
 
         } while (opc != 0);

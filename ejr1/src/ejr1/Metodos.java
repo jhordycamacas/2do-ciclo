@@ -45,8 +45,36 @@ public class Metodos {
         try {
             escribir = new FileWriter(archivo, true);
             linea = new PrintWriter(escribir);
-            linea.println(nombre+"\n"+dir+"\n"+correo);
+            linea.println(nombre + "\n" + dir + "\n" + correo);
             linea.close();
+        } catch (Exception e) {
+        }
+
+    }
+
+    public void leerArchivo() {
+        FileReader leer;
+        BufferedReader temporal;
+        String nombre, dir, correo, cadena = "";
+        try {
+            leer = new FileReader(archivo);
+            temporal = new BufferedReader(leer);
+            System.out.println("\nPRESENTACION DE DATOS: ");
+            while (cadena != null) {
+                cadena = temporal.readLine();
+                nombre = cadena;
+                cadena = temporal.readLine();
+                dir = cadena;
+                cadena = temporal.readLine();
+                correo = cadena;
+                if (cadena != null) {
+                    System.out.printf("Nombre: %s\nDireccion: %s\nCorreo: %s\n",
+                            nombre, dir, correo);
+
+                }
+            }
+            temporal.close();
+            leer.close();
         } catch (Exception e) {
         }
 
