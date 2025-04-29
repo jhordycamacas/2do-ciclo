@@ -26,7 +26,7 @@ public class Metodos1 {
         System.out.println("\nMENU PRINCIPAL:");
         System.out.println("[1] Insertar completo: ");
         System.out.println("[2] Recorrer arreglo: ");
-        System.out.println("[3] Buscar elemento del arreglo: ");
+        System.out.println("[3] Eliminar: ");
         System.out.println("[0] Salir: ");
         return sc.nextInt();
 
@@ -110,18 +110,57 @@ public class Metodos1 {
     }
 
     public void insOrden() {
-        if(ev < arreglo.length){
+        if (ev < arreglo.length) {
             int num = leerDato();
             int pos = 0;
-        while ((pos < ev) && (num > arreglo[pos])) {
-            pos++;
-        }
-        recorrerDer(pos);
-        arreglo[pos] = num;
-        ev++;
-        
-        }else{
+            while ((pos < ev) && (num > arreglo[pos])) {
+                pos++;
+            }
+            recorrerDer(pos);
+            arreglo[pos] = num;
+            ev++;
+
+        } else {
             System.out.println("No hay espacio...");
+        }
+
+    }
+
+    public void recorrerIzq(int num) {
+        for (int i = num; i < ev - 1; i++) {
+            arreglo[i] = arreglo[i + 1];
+
+        }
+
+    }
+
+    public void eliminar() {
+        int num = leerDato();
+        int pos = secuencial(num);
+        if (pos != -1) {
+            recorrerIzq(pos);
+            ev--;
+
+        } else {
+            System.out.println("No esta...");
+
+        }
+
+    }
+
+    public void burbuja() {
+        int aux;
+        for (int i = 0; i < ev - 1; i++) {
+            for (int j = i + 1; j < ev; j++) {
+                if (arreglo[i] > arreglo[j]) {
+                    aux = arreglo[i];
+                    arreglo[i] = arreglo[j];
+                    arreglo[j] = aux;
+
+                }
+
+            }
+
         }
 
     }

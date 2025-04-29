@@ -21,11 +21,11 @@ public class Ejer3 {
             opc = metodos.menu();
             switch (opc) {
                 case 1 ->
-                    metodos.insInicio();
+                    metodos.leerCompleto();
                 case 2 ->
                     metodos.presentar();
                 case 3 -> 
-                    metodos.insOrden();
+                    metodos.burbuja();
                     
 
             }
