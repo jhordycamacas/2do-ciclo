@@ -14,7 +14,21 @@ public class Eje4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Metodos1 metodos = new Metodos1();
+
+        int opc;
+        do {
+            opc = metodos.menu();
+            switch (opc) {
+                case 1 ->
+                    metodos.leerAlumno();
+                case 2 ->
+                    metodos.presentarAula();
+
+            }
+        } while (opc != 0);
     }
-    
+
 }
+
+
