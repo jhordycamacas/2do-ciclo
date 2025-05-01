@@ -24,9 +24,10 @@ public class Ejer3 {
                     metodos.leerCompleto();
                 case 2 ->
                     metodos.presentar();
-                case 3 -> 
+                case 3 ->
                     metodos.burbuja();
-                    
+                case 4 ->
+                    metodos.binaria();
 
             }
         } while (opc != 0);

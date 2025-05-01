@@ -27,6 +27,7 @@ public class Metodos1 {
         System.out.println("[1] Insertar completo: ");
         System.out.println("[2] Recorrer arreglo: ");
         System.out.println("[3] Eliminar: ");
+        System.out.println("[4] Buscar dato: ");
         System.out.println("[0] Salir: ");
         return sc.nextInt();
 
@@ -164,4 +165,41 @@ public class Metodos1 {
         }
 
     }
+
+    public int busquedabi(int num, int ini, int fin) {
+        if (ini <= fin) {
+            int medio = (ini + fin) / 2;
+            if (arreglo[medio] == num) {
+                return medio;
+
+            } else {
+                if (num > arreglo[medio]) {
+                    return busquedabi(num, medio + 1, fin);
+
+                } else {
+                    return busquedabi(num, ini, medio - 1);
+
+                }
+
+            }
+
+        } else {
+            return -1;
+        }
+
+    }
+
+    public void binaria() {
+        int num = leerDato();
+        int resp = busquedabi(num, 0, ev - 1);
+        if (resp != -1) {
+            System.out.println("El numero " + arreglo[resp]
+                    + " se encuentra en la posicion " + resp);
+
+        } else {
+            System.out.println("No se encuentra en el arreglo...");
+        }
+
+    }
+
 }
