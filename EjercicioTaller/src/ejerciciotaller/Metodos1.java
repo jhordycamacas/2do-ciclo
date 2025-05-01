@@ -48,7 +48,7 @@ public class Metodos1 {
         }
 
         try {
-            escribir = new FileWriter(archivo);
+            escribir = new FileWriter(archivo, false);
             linea = new PrintWriter(escribir);
             for (int i = 0; i < cont; i++) {
 
@@ -106,8 +106,8 @@ public class Metodos1 {
     }
 
     public void recorrer() {
+        System.out.println("PRESENTACION DE ARCHIVOS DESDE ARREGLO: ");
         for (int i = 0; i < miEncuesta.length; i++) {
-            System.out.println("PRESENTACION DE ARCHIVOS DESDE ARREGLO: ");
             System.out.printf("Cedula: %d\nNumero de Materias: %d"
                     + "\nNombre: %s\nTema Problema: %s\n",
                     miEncuesta[i].cedula, miEncuesta[i].numMat,
