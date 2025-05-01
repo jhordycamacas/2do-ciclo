@@ -79,7 +79,7 @@ public class Metodos1 {
         try {
             leer = new FileReader(archivo);
             temporal = new BufferedReader(leer);
-            System.out.println("\nPRESENTACION DE DATOS: ");
+            System.out.println("\nPRESENTACION DE DATOS DESDE ARCHIVO: ");
             while (cadena != null) {
                 cadena = temporal.readLine();
                 cedula = Integer.parseInt(cadena);
@@ -107,11 +107,12 @@ public class Metodos1 {
 
     public void recorrer() {
         for (int i = 0; i < miEncuesta.length; i++) {
-            System.out.println("------------");
+            System.out.println("PRESENTACION DE ARCHIVOS DESDE ARREGLO: ");
             System.out.printf("Cedula: %d\nNumero de Materias: %d"
                     + "\nNombre: %s\nTema Problema: %s\n",
                     miEncuesta[i].cedula, miEncuesta[i].numMat,
                     miEncuesta[i].nombre, miEncuesta[i].tema);
+            System.out.println("-----------------");
 
         }
 
