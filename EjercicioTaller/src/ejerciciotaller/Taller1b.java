@@ -29,6 +29,8 @@ public class Taller1b {
                     metodos.encuestar();
                 case 2 ->
                     metodos.leerArchivo();
+                case 3 ->
+                    metodos.recorrer();
 
             }
         } while (opc != 0);

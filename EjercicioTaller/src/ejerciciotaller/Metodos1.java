@@ -29,7 +29,7 @@ public class Metodos1 {
         System.out.println("\nMENU PRINCIPAL: ");
         System.out.println("[1] Encuestar: ");
         System.out.println("[2] Presentar desde archivo: ");
-        System.out.println("[2] Presentar desde arreglo: ");
+        System.out.println("[3] Presentar desde arreglo: ");
         System.out.println("[0] Abandonar el programa: ");
         return sc.nextInt();
 
@@ -48,7 +48,7 @@ public class Metodos1 {
         }
 
         try {
-            escribir = new FileWriter(archivo, true);
+            escribir = new FileWriter(archivo);
             linea = new PrintWriter(escribir);
             for (int i = 0; i < cont; i++) {
 
@@ -73,6 +73,7 @@ public class Metodos1 {
     public void leerArchivo() {
         FileReader leer;
         BufferedReader temporal;
+        int cont = 0;
         int cedula, numMat;
         String nombre, tema, cadena = "";
         try {
@@ -92,12 +93,26 @@ public class Metodos1 {
                     System.out.printf("Cedula: %d\nNumero de Materias: %d"
                             + "\nNombre: %s\nTema Problema: %s\n",
                             cedula, numMat, nombre, tema);
-
+                    System.out.println("-----------------------");
+                    miEncuesta[cont] = new Datos(cedula, nombre, numMat, tema);
+                    cont++;
                 }
             }
             temporal.close();
             leer.close();
         } catch (Exception e) {
+        }
+
+    }
+
+    public void recorrer() {
+        for (int i = 0; i < miEncuesta.length; i++) {
+            System.out.println("------------");
+            System.out.printf("Cedula: %d\nNumero de Materias: %d"
+                    + "\nNombre: %s\nTema Problema: %s\n",
+                    miEncuesta[i].cedula, miEncuesta[i].numMat,
+                    miEncuesta[i].nombre, miEncuesta[i].tema);
+
         }
 
     }
