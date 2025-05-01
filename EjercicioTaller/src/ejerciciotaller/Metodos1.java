@@ -69,4 +69,37 @@ public class Metodos1 {
         }
 
     }
+
+    public void leerArchivo() {
+        FileReader leer;
+        BufferedReader temporal;
+        int cedula, numMat;
+        String nombre, tema, cadena = "";
+        try {
+            leer = new FileReader(archivo);
+            temporal = new BufferedReader(leer);
+            System.out.println("\nPRESENTACION DE DATOS: ");
+            while (cadena != null) {
+                cadena = temporal.readLine();
+                cedula = Integer.parseInt(cadena);
+                cadena = temporal.readLine();
+                numMat = Integer.parseInt(cadena);
+                cadena = temporal.readLine();
+                nombre = cadena;
+                cadena = temporal.readLine();
+                tema = cadena;
+                if (cadena != null) {
+                    System.out.printf("Cedula: %d\nNumero de Materias: %d"
+                            + "\nNombre: %s\nTema Problema: %s\n",
+                            cedula, numMat, nombre, tema);
+
+                }
+            }
+            temporal.close();
+            leer.close();
+        } catch (Exception e) {
+        }
+
+    }
+
 }

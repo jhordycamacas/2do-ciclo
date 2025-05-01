@@ -27,6 +27,8 @@ public class Taller1b {
             switch (opc) {
                 case 1 ->
                     metodos.encuestar();
+                case 2 ->
+                    metodos.leerArchivo();
 
             }
         } while (opc != 0);
