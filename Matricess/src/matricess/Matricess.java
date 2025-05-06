@@ -25,7 +25,7 @@ public class Matricess {
                 case 2 ->
                     metodos.presentarMatriz();
                 case 3 -> 
-                    metodos.matrizTranspuesta();
+                    metodos.matrizTranspuesta2();
 
             }
         } while (opc != 0);

@@ -54,7 +54,7 @@ public class Metodos1 {
     public void matrizTranspuesta() {
         int aux = 0;
         for (int i = 0; i < matriz.length - 1; i++) {
-            for (int j = i+1; j < matriz[0].length; j++) {
+            for (int j = i + 1; j < matriz[0].length; j++) {
                 aux = matriz[i][j];
                 matriz[i][j] = matriz[j][i];
                 matriz[j][i] = aux;
@@ -64,4 +64,21 @@ public class Metodos1 {
 
     }
 
+    public void matrizTranspuesta2() {
+        int aux = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (i < j) {
+                    aux = matriz[i][j];
+                    matriz[i][j] = matriz[j][i];
+                    matriz[j][i] = aux;
+                }
+            }
+
+        }
+
+    }
+
 }
+
+
