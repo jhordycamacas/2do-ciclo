@@ -1,0 +1,46 @@
+Digite nombre del centro de salud: Daniel Alvarez
+Digite la provincia: Loja
+Digite la ciudad: Loja
+Digite el numero de camillas en buen estado: 4
+Digite el numero de camillas en mal estado: 2
+
+Digite nombre del centro de salud: Punzara
+Digite la provincia: Loja
+Digite la ciudad: Loja
+Digite el numero de camillas en buen estado: 5
+Digite el numero de camillas en mal estado: 3
+
+Daniel alvarez
+Loja
+Loja
+2
+3
+
+Punzara 
+Loja
+Loja
+2
+2
+
+Daniel alvarez
+loja
+loja
+2
+2
+
+punzara
+loja
+loja
+2
+2
+
+Daniel Albarez
+Loja
+loja
+2
+2
+Daniel Alvarez
+loja
+loja
+2
+2
