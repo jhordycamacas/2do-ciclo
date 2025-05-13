@@ -79,6 +79,20 @@ public class Metodos1 {
 
     }
 
+    public void matrizTranspuestadiag2() {
+        int aux = 0;
+        int l = matriz.length - 1;
+        for (int i = 0; i < matriz.length - 1; i++) {
+            int k = matriz.length - 1;
+            for (int j = 0; j < matriz[0].length - 1 - i; j++) {
+                aux = matriz[i][j];
+                matriz[i][j] = matriz[k][l];
+                matriz[k][l] = aux;
+                k--;
+            }
+            l--;
+        }
+
+    }
+
 }
-
-
