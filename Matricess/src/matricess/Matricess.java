@@ -20,12 +20,12 @@ public class Matricess {
         do {
             opc = metodos.menu();
             switch (opc) {
-                case 1 ->
+                /*case 1 ->
                     metodos.leerMatriz();
                 case 2 ->
-                    metodos.presentarMatriz();
+                    metodos.presentarMatriz();*/
                 case 3 -> 
-                    metodos.matrizTranspuestadiag2();
+                    metodos.multiplicacion();
 
             }
         } while (opc != 0);

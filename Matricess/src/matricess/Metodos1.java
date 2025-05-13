@@ -13,7 +13,9 @@ import java.util.Scanner;
 public class Metodos1 {
 
     Scanner sc;
-    int[][] matriz = new int[4][4];
+    int[][] A = new int[3][4];
+    int[][] B = new int[4][2];
+    int[][] R = new int[3][2];
 
     public Metodos1() {
         this.sc = new Scanner(System.in);
@@ -24,34 +26,35 @@ public class Metodos1 {
         System.out.println("[1] Insertar nueva matriz: ");
         System.out.println("[2] Presentar matriz: ");
         System.out.println("[3] Matriz Transpuesta: ");
+        System.out.println("[4] Multiplicar: ");
         System.out.println("[0] Salir: ");
         return sc.nextInt();
 
     }
 
-    public void leerMatriz() {
+    public void leerMatriz(int[][] x) {
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[0].length; j++) {
                 System.out.println("Ingrese valor para la posicion " + i + " " + j + " :");
-                matriz[i][j] = sc.nextInt();
+                x[i][j] = sc.nextInt();
             }
         }
 
     }
 
-    public void presentarMatriz() {
+    public void presentarMatriz(int[][] x) {
         System.out.println("MATRIZ: \n");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                System.out.print(matriz[i][j] + "  ");
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[0].length; j++) {
+                System.out.print(x[i][j] + "  ");
             }
             System.out.println("\n");
         }
 
     }
 
-    public void matrizTranspuesta() {
+    /*public void matrizTranspuesta() {
         int aux = 0;
         for (int i = 0; i < matriz.length - 1; i++) {
             for (int j = i + 1; j < matriz[0].length; j++) {
@@ -64,7 +67,7 @@ public class Metodos1 {
 
     }
 
-    public void matrizTranspuesta2() {
+   public void matrizTranspuesta2() {
         int aux = 0;
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
@@ -92,6 +95,29 @@ public class Metodos1 {
             }
             l--;
         }
+
+    }*/
+
+    public void multiplicar(int[][] x, int[][] y, int[][] z) {
+        int sum;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < y[0].length; j++) {
+                sum = 0;
+                for (int k = 0; k < x[0].length; k++) {
+                    sum += x[i][k] * y[k][j];
+                }
+                z[i][j] = sum;
+            }
+
+        }
+
+    }
+
+    public void multiplicacion() {
+        leerMatriz(A);
+        leerMatriz(B);
+        multiplicar(A, B, R);
+        presentarMatriz(R);
 
     }
 
