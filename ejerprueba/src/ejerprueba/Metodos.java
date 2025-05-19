@@ -66,6 +66,7 @@ public class Metodos {
                 cambien = sc.nextInt();
                 System.out.println("Digite el numero de camillas en mal estado: ");
                 cammal = sc.nextInt();
+                
                 linea.println(nombre + "\n" + provincia + "\n" + ciudad + "\n" + cambien
                         + "\n" + cammal);
             }
@@ -81,8 +82,7 @@ public class Metodos {
         BufferedReader temporal;
         int cont = 0;
         int cambien, cammal;
-        String nombre, provincia, ciudad = "";
-        String cadena = "";
+        String nombre, provincia, ciudad, cadena = "";
         try {
             leer = new FileReader(archivo);
             temporal = new BufferedReader(leer);
