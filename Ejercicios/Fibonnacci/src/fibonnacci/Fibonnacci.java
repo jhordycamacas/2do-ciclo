@@ -14,17 +14,18 @@ public class Fibonnacci {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int limite = 10; 
-        System.out.print("Serie Fibonacci hasta " + limite + " elementos: ");
-        for (int i = 0; i < limite; i++) {
-            System.out.print(fibonacci(i) + " ");
-        }
-    }
+         int opc;
 
-    public static int fibonacci(int n) {
-        if (n <= 1)
-            return n;
-        else 
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+        Metodos1 metodos = new Metodos1();
+
+        do {
+            opc = metodos.menu();
+            switch (opc) {
+                case 1 ->
+                    metodos.llenarArreglo();
+                case 2 ->
+                    metodos.presentarArreglo();
+            }
+        } while (opc != 0);
+    }
 }
