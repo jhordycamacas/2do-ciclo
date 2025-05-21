@@ -16,9 +16,11 @@ public class Metodos1 {
     String[] clientes;
     int[][] arreglo;
     String[] clientesDescuento;
+    int ev;
 
     public Metodos1(int limite) {
 
+        this.ev = 0;
         this.sc = new Scanner(System.in);
         this.clientes = new String[limite];
         this.arreglo = new int[clientes.length][6];
@@ -94,22 +96,22 @@ public class Metodos1 {
                 suma += arreglo[i][j];
             }
             if (suma >= 3) {
-                clientesDescuento[i] = clientes[i];
+                clientesDescuento[ev] = clientes[i];
+                ev += 1;
 
             }
             suma = 0;
         }
 
     }
-    
-    public void presentarClientesDescuento(){
-        for (int i = 0; i < clientesDescuento.length; i++) {
-            System.out.print("Cliente "+(i+1)+": "+clientesDescuento[i]);
+
+    public void presentarClientesDescuento() {
+        System.out.println("\nCLIENTES CON EL 20% DE DESCUENTO: ");
+        for (int i = 0; i < ev; i++) {
+            System.out.print("Cliente " + (i + 1) + ": " + clientesDescuento[i]);
             System.out.println();
         }
-    
+
     }
-            
-            
 
 }
