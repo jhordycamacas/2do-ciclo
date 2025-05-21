@@ -33,6 +33,7 @@ public class Libretass {
 
         metodo.presentar(prom, cual);
         metodo.mostrarEstado(prom);
+        metodo.verificarCedula();
     }
 
 }

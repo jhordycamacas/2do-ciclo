@@ -4,20 +4,24 @@
  */
 package libretass;
 
+import java.util.Scanner;
+
 /**
  *
  * @author usuario
  */
 public class Libretas {
 
+    Scanner sc;
     private String nombre;
-    private String cedula;
+    private int[] cedula;
     private String carrera;
     private double[] notas;
 
-    public Libretas(String nombre, String cedula, String carrera, double[] notas) {
+    public Libretas(String nombre, int[] cedula, String carrera, double[] notas) {
+        this.sc = new Scanner(System.in);
         this.nombre = nombre;
-        this.cedula = cedula;
+        this.cedula = new int[10];
         this.carrera = carrera;
         this.notas = notas;
     }
@@ -26,7 +30,7 @@ public class Libretas {
         return nombre;
     }
 
-    public String getCedula() {
+    public int[] getCedula() {
         return cedula;
     }
 
@@ -42,7 +46,7 @@ public class Libretas {
         this.nombre = nombre;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int[] cedula) {
         this.cedula = cedula;
     }
 
@@ -111,7 +115,7 @@ public class Libretas {
     }
 
     public void mostrarEstado(double prom) {
-        if (prom > 0 && prom < 7) {
+        if (prom >= 0 && prom < 7) {
             System.out.println("Usted esta reprobado\n");
 
         } else if (prom >= 7 && prom <= 10) {
@@ -119,6 +123,42 @@ public class Libretas {
 
         }
 
+    }
+    public static int convertirDigito(int numero) {
+    while (numero >= 10) {           
+        int suma = 0;
+        while (numero > 0) {         
+            suma += numero % 10;    
+            numero /= 10;            
+        }
+        numero = suma;              
+    }
+    return numero;                   
+    }
+
+    public void verificarCedula() {
+        System.out.println("Ingresar cedula numero por numero: \n");
+        for (int i = 0; i < cedula.length; i++) {
+            System.out.println("Numero (" + (i + 1) + "): ");
+            cedula[i] = sc.nextInt();
+        }
+        int[] aux2 = new int[2];
+        int contador = 2;
+        int[] resultado = new int[9];
+        for (int i = 0; i < cedula.length - 1; i++) {
+            if (i % 2 != 0) {
+                contador = 1;
+                resultado[i] = cedula[i] * contador;
+
+            } else {
+                resultado[i] = cedula[i] * contador;
+            }
+            if(resultado[i] >= 10){
+            resultado[i] = convertirDigito(resultado[i]);
+            }
+            
+            
+        }
     }
 
 }
