@@ -32,8 +32,8 @@ public class Aerolinea {
                     metodos.presentarEstadoAsientos();
                 case 2 ->
                     metodos.ocuparAsiento();
-               // case 3 ->
-                   // metodos.liberarAsiento();
+               case 3 ->
+                    metodos.liberarAsiento();
 
             }
 

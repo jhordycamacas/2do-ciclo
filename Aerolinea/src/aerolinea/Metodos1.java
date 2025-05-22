@@ -18,6 +18,7 @@ public class Metodos1 {
         System.out.println("[1] Observar estado de cada asiento(libre/ocupado): ");
         System.out.println("[2] Ocupar un asiento: ");
         System.out.println("[3] Liberar un asiento: ");
+        System.out.println("[0] Abandonar programa: ");
         return sc.nextInt();
     }
 
@@ -47,6 +48,24 @@ public class Metodos1 {
                 matriz[fila-1][columna-1] = 1;
             } else {
                 System.out.println("Ese asiento ya se encuentra ocupado...");
+            }
+
+        } else {
+            System.out.println("No existe ese asiento...");
+        }
+
+    }
+public void liberarAsiento() {
+        int fila, columna;
+        System.out.println("Ingrese la fila en la que se encuentra el asiento a liberar: ");
+        fila = sc.nextInt();
+        System.out.println("Ingrese la columna en la que se encuentra el asiento a liberar: ");
+        columna = sc.nextInt();
+        if ((fila-1 >= 0 && fila-1 <= matriz.length) && (columna-1 >= 0 && columna-1 <= matriz[0].length)) {
+            if (matriz[fila-1][columna-1] == 1) {
+                matriz[fila-1][columna-1] = 0;
+            } else {
+                System.out.println("Ese asiento ya se encuentra libre...");
             }
 
         } else {
