@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package notascursos;
 
 import java.util.Scanner;
 import java.util.Random;
 
-/**
- *
- * @author usuario
- */
 public class Metodos1 {
 
     int[][] notas;
