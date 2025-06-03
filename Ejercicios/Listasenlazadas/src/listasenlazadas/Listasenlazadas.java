@@ -4,6 +4,8 @@
  */
 package listasenlazadas;
 
+
+
 /**
  *
  * @author usuario
@@ -14,7 +16,21 @@ public class Listasenlazadas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Metodos1 metodos = new Metodos1();
+        int opc;
+
+        do {
+            opc = metodos.menu();
+            switch (opc) {
+                case 1 ->
+                    metodos.insertar();
+                case 2 ->
+                    metodos.recorrer();
+
+            }
+
+        } while (opc != 0);
     }
-    
+
 }
