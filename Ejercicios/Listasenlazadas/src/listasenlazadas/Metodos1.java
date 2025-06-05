@@ -18,6 +18,8 @@ public class Metodos1 {
         System.out.println("\nMENU PRINCIPAL: ");
         System.out.println("[1] Insertar: ");
         System.out.println("[2] Recorrer: ");
+        System.out.println("[3] Insertar dato al inicio: ");
+        System.out.println("[4] Insertar en orden: ");
         System.out.println("[0] Abandonar programa: ");
         return sc.nextInt();
     }
@@ -46,6 +48,38 @@ public class Metodos1 {
         }
     }
 
+    public void insOrden() {
+        Nodo nuevo = new Nodo(leerDatos());
+        if (listaVacia()) {
+            head = nuevo;
+        } else if (nuevo.valor < head.valor) {
+            nuevo.sig = head;
+            head = nuevo;
+
+        } else {
+            Nodo actual = head;
+            while ((actual.sig != null) && (actual.sig.valor < nuevo.valor)) {
+                actual = actual.sig;
+            }
+            nuevo.sig = actual.sig;
+            actual.sig = nuevo;
+
+        }
+
+    }
+
+    public void insInicio() {
+        Nodo nuevo = new Nodo(leerDatos());
+        if (listaVacia()) {
+            head = nuevo;
+        } else {
+            nuevo.sig = head;
+            head = nuevo;
+
+        }
+
+    }
+
     /*public void insertar() {
         Nodo nuevo = new Nodo(leerDatos());
         if (listaVacia()) {
@@ -61,7 +95,6 @@ public class Metodos1 {
 
         }
     }*/
-
     public void recorrer() {
         Nodo actual = head;
 

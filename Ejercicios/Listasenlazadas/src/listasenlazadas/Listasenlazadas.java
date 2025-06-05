@@ -27,6 +27,10 @@ public class Listasenlazadas {
                     metodos.insertar();
                 case 2 ->
                     metodos.recorrer();
+                case 3 ->
+                    metodos.insInicio();
+                case 4 ->
+                    metodos.insOrden();
 
             }
 
