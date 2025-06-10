@@ -31,6 +31,10 @@ public class Listasenlazadas {
                     metodos.insInicio();
                 case 4 ->
                     metodos.insOrden();
+                case 5 -> 
+                    metodos.buscar();
+                case 6 ->
+                    metodos.eliminar();
 
             }
 
