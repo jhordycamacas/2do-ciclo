@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package ejercompl;
 
 import java.util.Scanner;
 
-/**
- *
- * @author usuario
- */
+
 public class Ejercompl {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el numero de estudiantes: ");
@@ -32,9 +24,9 @@ public class Ejercompl {
                 case 3 ->
                     metodos.generarLista();
                 case 4 ->
-                    metodos.reporte('M');
-                case 5 ->
                     metodos.reporte('F');
+                case 5 ->
+                    metodos.reporte('M');
 
             }
         } while (opc != 0);
